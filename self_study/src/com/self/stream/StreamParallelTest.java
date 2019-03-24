@@ -22,6 +22,7 @@ public class StreamParallelTest {
 		System.out.println(System.currentTimeMillis() - start1);
 
 		System.out.println("=======================================");
+		System.out.println("=======================================");
 		
 		long start2 = System.currentTimeMillis();
 		ForkJoinPool forkjoinPool = new ForkJoinPool(4);
