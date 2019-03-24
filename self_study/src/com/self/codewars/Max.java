@@ -1,9 +1,8 @@
 package com.self.codewars;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Max {
   public static int sequence(int[] arr) {
