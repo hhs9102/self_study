@@ -18,7 +18,7 @@ public class StreamParallelTest {
 			}
 			return i;
 		}).forEach(i -> System.out.println(i));
-		System.out.println("settings parellel 4");
+		System.out.println("settings parellel 4(print 소요 시간 ms)");
 		System.out.println(System.currentTimeMillis() - start1);
 
 		System.out.println("=======================================");
@@ -43,7 +43,7 @@ public class StreamParallelTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("use ForkJoinPool 4");
+		System.out.println("use ForkJoinPool 4(print 소요 시간 ms)");
 		System.out.println(System.currentTimeMillis() - start2);
 	}
 }

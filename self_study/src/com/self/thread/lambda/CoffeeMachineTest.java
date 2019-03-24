@@ -7,7 +7,6 @@ public class CoffeeMachineTest {
 	public static void main(String[] args) {
 
 		final AtomicInteger count = new AtomicInteger(1);
-		
 		CoffeeMachine coffeeMachine = new CoffeeMachine();
 		for(int i=0; i<10; i++) {
 			new Thread(() -> {
