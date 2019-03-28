@@ -49,6 +49,16 @@ public class PredicateTest {
 		System.out.println(filter(numbers, i -> i > 3));	//[4, 5, 6, 7]
 		System.out.println("less than 3");
 		System.out.println(filter(numbers, i -> i < 3));	//[-3, -2, -1, 0, 1, 2]
+		
+		Predicate<Integer> greaterThan3 = new Predicate<Integer>() {
+			@Override
+			public boolean test(Integer t) {
+				// TODO Auto-generated method stub
+				return t>3;
+			}
+		}; 
+		System.out.println("greater than 3");
+		System.out.println(filter(numbers, greaterThan3));
 	}
 	
 	public static <T> List<T> filter(List<T> list, Predicate<T> filter){
