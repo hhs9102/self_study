@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
-
+/*int32 to IPv4*/
 public class LongToIp {
 
 	public static String longToIp(long ip) {
