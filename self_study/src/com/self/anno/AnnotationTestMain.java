@@ -6,12 +6,15 @@ import java.lang.reflect.Method;
 public class AnnotationTestMain {
 
 	public static void main(String[] args) throws NoSuchMethodException, SecurityException {
-		Person p = new Person("HOSIK", 56);
-		Field f  = p.getClass().getDeclaredFields()[0];
-		AnnotationFieldTest annoField = f.getAnnotation(AnnotationFieldTest.class);
+		Person p = new Person("HOSIK", "A Company", 56);
+		Field nameField  = p.getClass().getDeclaredFields()[0];
+		Field companyField  = p.getClass().getDeclaredFields()[1];
 		
-		String fieldName = annoField.name();
-		System.out.println(fieldName);
+		AnnotationFieldTest nameAnnoField = nameField.getAnnotation(AnnotationFieldTest.class);
+		AnnotationFieldTest companyAnnoField = companyField.getAnnotation(AnnotationFieldTest.class);
+		
+		System.out.println(nameAnnoField.name());
+		System.out.println(companyAnnoField.name());
 		
 		Method m = p.getClass().getDeclaredMethod("getName");
 		AnnotationMethodTest annoMethod = m.getAnnotation(AnnotationMethodTest.class);
