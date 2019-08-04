@@ -40,4 +40,36 @@ public class OptionalTest {
             System.out.println("isPresent");
         }
     }
+
+    @Test
+    public void optionalIfPresentTest(){
+        InnerClassTest innerClassTest = new InnerClassTest();
+        System.out.println(innerClassTest.getNumber().get());
+        innerClassTest.getStr().ifPresent(System.out::println);
+
+        innerClassTest.getStr().ifPresent(System.out::println);
+        String test = innerClassTest.getStr().orElse("3");
+        innerClassTest.getStr().ifPresentOrElse(System.out::println, () -> System.out.println("333"));
+    }
+
+    class InnerClassTest{
+        private int number;
+        private String str;
+
+        public void setStr(String str){
+            this.str=str;
+        }
+
+        public Optional<String> getStr(){
+            return Optional.ofNullable(str);
+        }
+
+        public void setNumber(int number){
+            this.number= number;
+        }
+
+        public Optional<Integer> getNumber(){
+            return Optional.ofNullable(number);
+        }
+    }
 }

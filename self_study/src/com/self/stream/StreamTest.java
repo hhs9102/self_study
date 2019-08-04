@@ -9,14 +9,14 @@ import java.util.stream.Stream;
 public class StreamTest {
 
     @Test
-    public void intStreamTest(){
+    public void intStreamTest() {
         IntStream
-                .range(1,10)
+                .range(1, 10)
                 .skip(5)
                 .forEach(System.out::println);
 
-        System.out.println(IntStream.range(1,10)
-                                    .sum());
+        System.out.println(IntStream.range(1, 10)
+                .sum());
 
         Stream.of("Ava", "Aneri", "Alberto")
                 .sorted()
@@ -29,10 +29,11 @@ public class StreamTest {
                 .sorted()
                 .forEach(System.out::println);
 
-        Arrays.stream(new int[]{2,4,6,8,10})
-                .map(x -> x*x)
+        Arrays.stream(new int[]{2, 4, 6, 8, 10})
+                .map(x -> x * x)
                 .average()
                 .ifPresent(System.out::println);
     }
-
 }
+
+
