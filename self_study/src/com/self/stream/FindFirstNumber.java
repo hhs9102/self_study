@@ -1,7 +1,8 @@
 package com.self.stream;
 
-import java.util.Arrays;
-import java.util.List;
+import org.junit.Test;
+
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FindFirstNumber {
@@ -46,5 +47,27 @@ public class FindFirstNumber {
 		}
 		System.out.println("기존 for, if 활용 : "+result);
 		System.out.println("기존 for, if 활용  count 수 : "+count);
+	}
+
+
+	@Test
+	public void testStreamFindFirst(){
+		List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8);
+		System.out.println("1~8에서 3보다 큰수 중에 곱하기 2한 값이 가장 작은 값을 출력해라.");
+
+		OptionalInt min = numbers.stream()
+				.filter(i -> i > 3)
+				.map(i -> i * 2)
+				.mapToInt(i->i)
+				.min();
+		System.out.println(min);
+		System.out.println(min.getAsInt());
+
+		Optional<Integer> integerMin = numbers.stream()
+				.filter(i -> i > 3)
+				.map(i -> i * 2)
+				.min(Comparator.comparing(Integer::valueOf));
+		System.out.println(integerMin);
+		System.out.println(integerMin.get());
 	}
 }
