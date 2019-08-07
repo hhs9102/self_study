@@ -34,6 +34,21 @@ public class StreamTest {
                 .average()
                 .ifPresent(System.out::println);
     }
+
+    @Test
+    public void testStreamAnyMatch(){
+        IntStream is = IntStream.range(1,100);
+        boolean isExists  = is.map(i -> i/5)
+                            .filter(i -> i>5)
+                            .anyMatch(i -> i==20);
+        System.out.println(isExists);
+
+        is = IntStream.range(1,100);
+        boolean  isNotExists = is.map(i -> i/5)
+                .filter(i -> i>5)
+                .noneMatch(i -> i==20);
+        System.out.println(isNotExists);
+    }
 }
 
 
