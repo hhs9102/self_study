@@ -1,15 +1,13 @@
 package com.self.programmers;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 //100
 public class MaxNumber {

@@ -1,12 +1,11 @@
 package com.self.programmers;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 //100
 public class Lifeboat {

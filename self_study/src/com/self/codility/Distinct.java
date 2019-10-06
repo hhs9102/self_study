@@ -1,14 +1,13 @@
 package com.self.codility;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 //lesson 6 8p
 public class Distinct {

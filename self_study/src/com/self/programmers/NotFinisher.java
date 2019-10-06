@@ -1,9 +1,9 @@
 package com.self.programmers;
 
+import junit.framework.Assert;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import junit.framework.Assert;
 
 //100
 public class NotFinisher {

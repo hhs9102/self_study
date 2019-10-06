@@ -1,15 +1,11 @@
 package com.self.programmers;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 //100 수포자
 public class MathAbandoners {

@@ -1,7 +1,5 @@
 package com.self.lambda;
 
-import java.util.function.BiFunction;
-
 public class StestStringConcat {
 	public static void main(String[] args) {
 		String s1 = "Hello";

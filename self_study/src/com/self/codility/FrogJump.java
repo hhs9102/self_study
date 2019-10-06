@@ -1,12 +1,11 @@
 package com.self.codility;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class FrogJump {
 

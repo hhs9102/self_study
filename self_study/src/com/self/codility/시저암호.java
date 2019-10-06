@@ -1,8 +1,7 @@
 package com.self.codility;
 
-import org.junit.Test;
-
 import junit.framework.Assert;
+import org.junit.Test;
 
 //33
 public class 시저암호 {

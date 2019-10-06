@@ -1,10 +1,10 @@
 package com.self.programmers;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Average {
 

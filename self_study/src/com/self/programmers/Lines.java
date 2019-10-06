@@ -1,8 +1,7 @@
 package com.self.programmers;
 
-import org.junit.Test;
-
 import junit.framework.Assert;
+import org.junit.Test;
 /*
 [1, 2, 3]
 [1, 3, 2]

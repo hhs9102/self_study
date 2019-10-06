@@ -1,9 +1,9 @@
 package com.self.generics;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import lombok.Data;
 
 @Data
 public class Box<T extends Eatable> {

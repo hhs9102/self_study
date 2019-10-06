@@ -1,14 +1,13 @@
 package com.self.codility;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class BinaryGap {
 

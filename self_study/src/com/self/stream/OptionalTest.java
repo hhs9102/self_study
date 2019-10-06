@@ -49,7 +49,7 @@ public class OptionalTest {
 
         innerClassTest.getStr().ifPresent(System.out::println);
         String test = innerClassTest.getStr().orElse("3");
-        innerClassTest.getStr().ifPresentOrElse(System.out::println, () -> System.out.println("333"));
+//        innerClassTest.getStr().ifPresentOrElse(System.out::println, () -> System.out.println("333"));
     }
 
     class InnerClassTest{

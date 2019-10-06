@@ -1,14 +1,8 @@
 package com.self.programmers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-
 import junit.framework.Assert;
+
+import java.util.*;
 
 public class Printer {
 

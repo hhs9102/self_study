@@ -1,8 +1,8 @@
 package com.self.generics.stack;
 
-import java.util.Arrays;
-
 import lombok.extern.java.Log;
+
+import java.util.Arrays;
 
 @Log
 public class Stack<E> {

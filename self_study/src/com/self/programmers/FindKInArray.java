@@ -1,10 +1,10 @@
 package com.self.programmers;
 
+import junit.framework.Assert;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import junit.framework.Assert;
 
 public class FindKInArray {
 	public int[] solution(int[] array, int[][] commands) {

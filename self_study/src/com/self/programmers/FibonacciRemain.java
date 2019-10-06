@@ -1,8 +1,8 @@
 package com.self.programmers;
 
-import java.math.BigInteger;
-
 import org.junit.Test;
+
+import java.math.BigInteger;
 
 //100
 public class FibonacciRemain {

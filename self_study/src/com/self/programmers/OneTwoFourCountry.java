@@ -1,13 +1,12 @@
 package com.self.programmers;
 
+import junit.framework.Assert;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Test;
-
-import junit.framework.Assert;
 
 //100
 public class OneTwoFourCountry {

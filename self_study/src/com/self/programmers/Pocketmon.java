@@ -1,11 +1,10 @@
 package com.self.programmers;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import junit.framework.Assert;
 import org.junit.Test;
 
-import junit.framework.Assert;
+import java.util.HashSet;
+import java.util.Set;
 
 //100
 public class Pocketmon {

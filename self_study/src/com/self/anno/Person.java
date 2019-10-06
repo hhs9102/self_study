@@ -2,6 +2,7 @@ package com.self.anno;
 
 import lombok.AllArgsConstructor;
 
+
 @AllArgsConstructor
 public class Person {
 	@AnnotationFieldTest(name = "This is Person name Annotaion")
