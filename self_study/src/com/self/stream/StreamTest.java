@@ -5,12 +5,14 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.joining;
+import static org.junit.Assert.assertEquals;
 
 public class StreamTest {
 
@@ -91,7 +93,19 @@ public class StreamTest {
                 .findAny()
                 .orElse("none");
         System.out.println(findAnyStr2);
+    }
 
+
+    @Test
+    public void testAllToUpperCase() {
+
+        List<String> expected = Arrays.asList("JAVA8", "STREAMS");
+        Function<List<String>, List<String>> allToUpperCase = word -> word.stream().map(String::toUpperCase).collect(Collectors.toList());
+        List<String> result = allToUpperCase.apply(Arrays.asList("java8", "streams"));
+        assertEquals(expected, result);
+
+        assertEquals(true, expected.stream().filter(s -> s.equals("JAVA8")).findAny().isPresent());
+        assertEquals(false, expected.stream().filter(s -> s.equals("C")).findAny().isPresent());
     }
 }
 
