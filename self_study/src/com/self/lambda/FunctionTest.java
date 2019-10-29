@@ -1,5 +1,8 @@
 package com.self.lambda;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 public class FunctionTest {
@@ -28,6 +31,25 @@ public class FunctionTest {
 		
 		Function<Integer, Integer> identity = t -> t;
 		System.out.println(identity.apply(999));
+
+		lengthPrint();
 	}
+
+	public static void lengthPrint(){
+		List<Integer> integers = map(
+				Arrays.asList("lambdas", "in", "action")
+				, (String s) -> s.length()
+		);
+		System.out.println(integers);
+	}
+
+	private static List<Integer> map(List<String> asList, Function<String, Integer> f) {
+		List<Integer> integers = new ArrayList<>();
+		asList.stream()
+				.forEach(s -> {integers.add(f.apply(s));
+				});
+		return integers;
+	}
+
 
 }
