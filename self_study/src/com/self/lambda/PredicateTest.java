@@ -1,8 +1,11 @@
 package com.self.lambda;
 
+import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class PredicateTest {
@@ -59,8 +62,19 @@ public class PredicateTest {
 		}; 
 		System.out.println("greater than 3");
 		System.out.println(filter(numbers, greaterThan3));
+
+		System.out.println("===============================");
+		boxingTest();
 	}
-	
+
+	private static void boxingTest() {
+		IntPredicate intPredicate = (int i) -> i%2 == 0; 	//박싱하지 않음
+		Assert.assertEquals(true, intPredicate.test(100));
+		Predicate<Integer> integerPredicate = (Integer i) -> i%2 ==0;	//박싱
+		Assert.assertEquals(true, integerPredicate.test(100));
+
+	}
+
 	public static <T> List<T> filter(List<T> list, Predicate<T> filter){
 		List<T> result = new ArrayList<T>();
 		for(T input : list) {
