@@ -12,7 +12,6 @@ public class FunctionTest {
 		Function<String, Integer> toInt = new Function<String, Integer>() {
 			@Override
 			public Integer apply(String t) {
-				// TODO Auto-generated method stub
 				return Integer.parseInt(t);
 			}
 		};
@@ -33,6 +32,19 @@ public class FunctionTest {
 		System.out.println(identity.apply(999));
 
 		lengthPrint();
+
+		methodReference();
+	}
+
+	private static void methodReference() {
+		Function<String, Integer> function = String::length;
+		System.out.println(":::::::::::methodReference:::::::::::");
+		System.out.println(function.apply("asdfasdfsa"));
+
+		SubstringFunctional substringFunctional1 = String::substring;
+		SubstringFunctional substringFunctional2 = (str, i) -> str.substring(i);
+		System.out.println(substringFunctional1.apply("2192873",3));
+		System.out.println(substringFunctional2.apply("2192873",3));
 	}
 
 	public static void lengthPrint(){
