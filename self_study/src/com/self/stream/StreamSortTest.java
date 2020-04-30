@@ -31,17 +31,27 @@ public class StreamSortTest {
         assertEquals(6, personList.size());
 
         assertEquals("name6", personList.stream()
-                .sorted(Comparator.comparing(Person::getHeight,Comparator.reverseOrder())
-                        .thenComparing(Person::getBirth, Comparator.reverseOrder()))
-                .findFirst()
-                .get()
-                .getName());
+            .sorted(Comparator.comparing(Person::getHeight,Comparator.reverseOrder())
+                    .thenComparing(Person::getBirth, Comparator.reverseOrder()))
+            .findFirst()
+            .get()
+            .getName());
 
         assertEquals("name6", personList.stream()
-                .sorted(Person::compareTallAndYoung)
-                .findFirst()
-                .get()
-                .getName());
+            .sorted(Person::compareTallAndYoung)
+            .findFirst()
+            .get()
+            .getName());
+    }
+    @Test
+    public void 제일_크고_제일_늙은_사람(){
+        assertEquals(6, personList.size());
+
+        assertEquals("name4", personList.stream()
+            .sorted(Person::compareTallAndOld)
+            .findFirst()
+            .get()
+            .getName());
     }
 
     @Data
@@ -51,7 +61,7 @@ public class StreamSortTest {
         private Integer height;
         private LocalDate birth;
 
-        //TODO 좀 더 깔끔하게..? 멋지게..?
+       /*
         public int compareTallAndYoung(Person target){
             if(this.height < target.getHeight()){
                 return 1;
@@ -66,7 +76,17 @@ public class StreamSortTest {
             }else{
                 return -1;
             }
-
+        }
+*/
+        public int compareTallAndYoung(Person target){
+            return Comparator.comparing(Person::getHeight,Comparator.reverseOrder())
+                    .thenComparing(Person::getBirth, Comparator.reverseOrder())
+                    .compare(this, target);
+        }
+        public int compareTallAndOld(Person target){
+            return Comparator.comparing(Person::getHeight,Comparator.reverseOrder())
+                    .thenComparing(Person::getBirth)
+                    .compare(this, target);
         }
     }
 }
