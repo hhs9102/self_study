@@ -5,6 +5,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class FlatMapTest {
 
@@ -25,6 +30,34 @@ public class FlatMapTest {
                         .filter(age -> age.equals(Integer.valueOf(22)))
                 ).count();
         System.out.println("sameAgeCount : "+sameAgeCount);
+        assertEquals(4,sameAgeCount);
+    }
+
+    @Test
+    public void distinctCharFlapMap(){
+        List<String> list = Arrays.asList("Modern","Java", "In", "Action");
+
+        List<String> disticntStr = list.stream()
+                .map(word -> word.split(""))
+                .flatMap(Arrays::stream)
+                .map(String::toLowerCase)
+                .distinct()
+                .collect(toList());
+        System.out.println(disticntStr);
+        assertEquals("modernjavict".length(),disticntStr.size());
+
+
+        List<String> firstOptioin = Arrays.asList("001","002","004","006");
+        List<String> twiceOptioin = Arrays.asList("002","003","004","005");
+        //단일 원소 스트림으로 받을 수 있다.
+        List<Object> collect = Stream.of(firstOptioin, twiceOptioin)
+                .map(List::toArray)
+                .flatMap(Arrays::stream)
+                .distinct()
+                .sorted()
+                .collect(toList());
+        assertTrue(collect.size() == 6);
+        System.out.println(collect);
 
     }
 }
